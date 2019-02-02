@@ -21,7 +21,7 @@ class BoardingLoginScreen extends StatefulWidget {
 class BoardingLoginScreenState extends State {
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
-
+  
   var isFormEmpty = false;
   var isWrongCredential = false;
   var passwordVisible = false;

@@ -7,7 +7,7 @@ import '../model/token.dart';
 import '../model/user.dart';
 
 class BakauApi {
-  static const String serverName = "bakau";
+  static const String serverName = "staging-bakau";
   static const String completeName = "$PROTOCOL$serverName.$DOMAIN";
   static const String secret = "BdQv7AHrFsAb5JMwYN6OZvCMSn7lU5nB";
 

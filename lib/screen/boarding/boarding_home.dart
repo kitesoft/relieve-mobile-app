@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 import '../../res/res.dart';
 import '../../widget/item/title.dart';
@@ -12,17 +13,29 @@ import 'boarding_register.dart';
 class BoardingHomeScreen extends StatelessWidget {
   BoardingHomeScreen({Key key}) : super(key: key);
 
+  GoogleSignIn _googleSignIn = GoogleSignIn(
+    scopes: [
+      'email',
+      'https://www.googleapis.com/auth/contacts.readonly',
+    ],
+  );
+
   void loginButtonClicked(BuildContext context) {
     Navigator.push(context,
         MaterialPageRoute(builder: (context) => BoardingLoginScreen()));
   }
 
-  void googleButtonClicked(BuildContext context) {
-    Navigator.pushAndRemoveUntil(
-      context,
-      MaterialPageRoute(builder: (builder) => WalkthroughScreen()),
-      (_) => false, // clean all back stack
-    );
+  void googleButtonClicked(BuildContext context) async {
+    try {
+      await _googleSignIn.signIn();
+    } catch (error) {
+      print(error);
+    }
+    // Navigator.pushAndRemoveUntil(
+    //   context,
+    //   MaterialPageRoute(builder: (builder) => WalkthroughScreen()),
+    //   (_) => false, // clean all back stack
+    // );
   }
 
   void registerButtonClicked(BuildContext context) {
