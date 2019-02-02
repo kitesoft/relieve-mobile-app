@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_stetho/flutter_stetho.dart';
 
 import 'screen/boarding/boarding_home.dart';
 import 'res/res.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  Stetho.initialize();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of my application.
