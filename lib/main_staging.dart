@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_stetho/flutter_stetho.dart';
 
 import 'screen/boarding/boarding_home.dart';
 import './app_config.dart';
@@ -8,12 +7,11 @@ import 'res/res.dart';
 
 void main() {
   var configuredApp = new AppConfig(
-    flavorName: 'production',
-    apiProtocol: 'https',
-    apiUrlPrefix: '',
+    flavorName: 'staging',
+    apiProtocol: 'http',
+    apiUrlPrefix: 'staging-',
     child: new MyApp(),
   );
-  Stetho.initialize();
 
   runApp(configuredApp);
 }

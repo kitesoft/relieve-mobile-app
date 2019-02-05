@@ -2,17 +2,19 @@ import 'package:http/http.dart' as http;
 import 'dart:io';
 import 'dart:convert';
 
-import './base.dart';
-import '../model/token.dart';
-import '../model/user.dart';
+import '../api/config.dart';
+import '../../../app_config.dart';
+import '../../model/token.dart';
+import '../../model/user.dart';
 
-class BakauApi {
-  static const String serverName = "staging-bakau";
-  static const String completeName = "$PROTOCOL$serverName.$DOMAIN";
-  static const String secret = "BdQv7AHrFsAb5JMwYN6OZvCMSn7lU5nB";
+class BakauApi extends BaseApi {
+  @override
+  final String serverName = "bakau";
 
-  static Future<TokenResponse> login(String username, String password) async{    
-    var url = "$completeName/auth/login";
+  BakauApi(AppConfig appConfig) : super(appConfig);
+
+  Future<TokenResponse> login(String username, String password) async {
+    var url = "$completeUri/auth/login";
     final response = await http.post(
       url,
       headers: {
@@ -28,8 +30,8 @@ class BakauApi {
     return TokenResponse.fromJson(jsonDecode(response.body));
   }
 
-  static Future<TokenResponse> register(User user) async{    
-    var url = "$completeName/auth/register";
+  Future<TokenResponse> register(User user) async {
+    var url = "$completeUri/auth/register";
     final response = await http.post(
       url,
       headers: {
