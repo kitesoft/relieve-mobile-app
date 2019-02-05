@@ -27,7 +27,8 @@ class BoardingHomeScreen extends StatelessWidget {
 
   void googleButtonClicked(BuildContext context) async {
     try {
-      await _googleSignIn.signIn();
+      final account = await _googleSignIn.signIn();
+      print(account);
     } catch (error) {
       print(error);
     }
