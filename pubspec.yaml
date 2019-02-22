@@ -23,6 +23,8 @@ dependencies:
   email_validator: ^1.0.0
   flutter_cupertino_date_picker: ^0.3.0
   shared_preferences: ^0.4.3
+  recase: ^2.0.1
+  flushbar: ^1.2.1
   flutter_stetho: ^0.2.2
   google_sign_in: ^4.0.0
 

@@ -37,7 +37,7 @@ class LocalImage {
   const LocalImage(this.imageName);
 
   SvgPicture toSvg({double width, double height, Color color}) {
-    return SvgPicture.asset('images/' + imageName + '.svg',
+    return SvgPicture.asset('images/$imageName.svg',
         width: width, height: height, color: color);
   }
 
@@ -59,6 +59,7 @@ class LocalImage {
   static LocalImage get dashed_circle => LocalImage('dashed_circle');
 
   // profile
+  static LocalImage get ic_map => LocalImage('ic_map');
   static LocalImage get ic_location => LocalImage('ic_location');
   static LocalImage get ic_exit => LocalImage('ic_exit');
   static LocalImage get ic_faq => LocalImage('ic_faq');
@@ -87,7 +88,8 @@ class LocalImage {
   static LocalImage get ic_warning => LocalImage('ic_warning');
 
   // Weather
+  static LocalImage get ic_temperature => LocalImage('ic_temperature');
   static LocalImage get ic_wind => LocalImage('ic_wind');
-  static LocalImage get ic_uv => LocalImage('ic_uv');
+  static LocalImage get ic_sun => LocalImage('ic_sun');
   static LocalImage get ic_rain => LocalImage('ic_rain');
 }

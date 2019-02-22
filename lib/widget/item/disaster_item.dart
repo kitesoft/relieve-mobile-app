@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../res/res.dart';
 import '../../service/model/disaster.dart';
-import '../../widget/item/standard_button.dart';
 import '../bottom_modal.dart';
 
 class DiscoverItem extends StatelessWidget {
@@ -210,7 +209,6 @@ class DisasterItemListState extends State {
       borderRadius: BorderRadius.circular(Dimen.x4),
       child: InkWell(
         onTap: () {
-          print('rtess');
         },
         child: Container(
           alignment: Alignment.center,
@@ -296,9 +294,9 @@ class DisasterItemListState extends State {
           DisasterItem(
             disaster: Disaster(
               isLive: true,
-              location: "Palembang",
+              location: 'Palembang',
               time: 20000,
-              title: "Gempa 7.6 SR",
+              title: 'Gempa 7.6 SR',
             ),
             onClick: () {
               testSheet(context);
@@ -307,25 +305,25 @@ class DisasterItemListState extends State {
           DisasterItem(
             disaster: Disaster(
               isLive: false,
-              location: "Palembang",
+              location: 'Palembang',
               time: 20000,
-              title: "Gempa 7.6 SR",
+              title: 'Gempa 7.6 SR',
             ),
           ),
           DisasterItem(
             disaster: Disaster(
               isLive: false,
-              location: "Palembang",
+              location: 'Palembang',
               time: 20000,
-              title: "Gempa 7.6 SR",
+              title: 'Gempa 7.6 SR',
             ),
           ),
           DisasterItem(
             disaster: Disaster(
               isLive: false,
-              location: "Palembang",
+              location: 'Palembang',
               time: 20000,
-              title: "Gempa 7.6 SR",
+              title: 'Gempa 7.6 SR',
             ),
           ),
           Container(

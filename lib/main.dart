@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_stetho/flutter_stetho.dart';
 
-import 'screen/boarding/boarding_home.dart';
+import 'landing_screen.dart';
 import './app_config.dart';
 import 'res/res.dart';
 
@@ -33,7 +33,8 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.white,
           canvasColor: Colors.transparent,
           fontFamily: CircularStdFont.book.fontFamily,
+          hintColor: AppColor.colorEmptyRect,
         ),
-        home: BoardingHomeScreen());
+        home: LandingScreen());
   }
 }
